@@ -64,7 +64,7 @@ const deckInstance = new deck.DeckGL({
     new deck.LineLayer({
       data: data.filter((d) => d.bearing),
       getSourcePosition: (d) => [d.lng, d.lat],
-      getTargetPosition: (d) => calcTargetPosition(d.lat, d.lng, d.bearing, 100),
+      getTargetPosition: (d) => calcTargetPosition(d.lat, d.lng, d.bearing, 150),
       getColor: (d) => alpha(d.speed ? green : red, 128),
 
       widthMinPixels: 3,
