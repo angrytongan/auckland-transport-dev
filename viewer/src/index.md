@@ -111,6 +111,6 @@ invalidation.then(() => {
 <style>
   #container {
     overflow: hidden;
-    height: 500px;
+    height: 800px;
   }
 </style>

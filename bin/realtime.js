@@ -40,4 +40,6 @@ const getData = async (url, key) => {
         });
 };
 
-await getData(legacyURL, process.env.APTD_PRIMARY_KEY);
+(async () => {
+    await getData(legacyURL, process.env.APTD_PRIMARY_KEY);
+})();
