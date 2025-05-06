@@ -11,9 +11,10 @@ API](https://dev-portal.at.govt.nz).
   ```shell
   % APTD_PRIMARY_KEY=... node bin/realtime.js > viewer/src/data/out.csv
   ```
+- You'll need a mapbox access token from <https://mapbox.com>
 - Setup and run the Observable Framework application:
   ```shell
   % cd viewer
   % npm install
-  % npm run dev
+  % MAPBOX_ACCESS_TOKEN=... npm run dev
   ```
