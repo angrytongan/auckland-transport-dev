@@ -18,7 +18,7 @@ const initialViewState = {
 
 const red = [ 255, 0, 0, 255 ];
 const green = [ 0, 255, 0, 255 ];
-const transparent = [ 0, 0, 0, 0 ];
+const transparent = [ 255, 255, 255, 0 ];
 
 const alpha = (col, al) => [ col[0], col[1], col[2], al ];
 
@@ -56,7 +56,10 @@ const deckInstance = new deck.DeckGL({
     new deck.ScatterplotLayer({
       data: data,
       getPosition: (d) => [d.lng, d.lat],
-      getFillColor: (d) => d.speed > 0 ? green : red,
+      getFillColor: (d) => d.vehicle_plate ? (d.speed > 0 ? green : red) : transparent,
+      getLineColor: (d) => d.speed > 0 ? green : red,
+
+      stroked: true,
 
       radiusMinPixels: 3,
     }),
@@ -78,7 +81,7 @@ const deckInstance = new deck.DeckGL({
         d.vehicle_plate,
       ].join('\n'),
       getColor: (d) => alpha(d.speed ? green : red, 128),
-      getPixelOffset: [16, 8],
+      getPixelOffset: [22, 8],
 
       sizeMaxPixels: 8,
     }),
